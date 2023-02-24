@@ -2,7 +2,7 @@ import ainJs from '@ainblockchain/ain-js'
 import readline from 'readline-sync'
 
 // import env variables
-import { env, spinner } from './env.js'
+import { env, sleep, spinner, typewrite } from './env.js'
 
 // create default class of AINetwork and object of the class
 const Ain = ainJs.default
@@ -14,11 +14,6 @@ const address = ain.wallet.addAndSetDefaultAccount(ainetworkAccount.private_key)
 
 console.log('Chat with your AINFT\nEnter \'quit()\' to stop chat\n')
 console.log('Welcome!')
-
-// sleep function to wait response from AI chatbot
-const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 const run_chatbot = async () => {
   while(true) {
@@ -62,7 +57,8 @@ const run_chatbot = async () => {
       if (response) {
         // stop spinner
         await spinner.stop()
-        console.log(response)
+        await typewrite(response)
+        // console.log(response)
         break
       }
 
