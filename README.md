@@ -19,9 +19,9 @@ npm install
 ```
 
 ## 2. Create AINetwork account
-1. Execute __1-create_account.js__ file to create your AINetwork account.
+1. Execute __2-create_account.js__ file to create your AINetwork account.
 ```
-node 1-create_account.js
+node 2-create_account.js
 ```
 2. Your account is created and the account saved at __account.json.__
 
