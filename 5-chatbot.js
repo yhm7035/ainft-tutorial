@@ -2,7 +2,7 @@ import ainJs from '@ainblockchain/ain-js'
 import readline from 'readline-sync'
 
 // import env variables
-import { env } from './env.js'
+import { env, spinner } from './env.js'
 
 // create default class of AINetwork and object of the class
 const Ain = ainJs.default
@@ -39,12 +39,19 @@ const run_chatbot = async () => {
       nonce: -1,
     })
 
+    // start spinner
+    await spinner.start()
     // get response from AINetwork by polling
     let getResponseNotYet = true
     let requestCount = 1
     while(getResponseNotYet) {
+      // wait 2 seconds to get response
+      await sleep(2000)
+
       // maximum number of attempts is 5
       if (requestCount > 5) {
+        // stop spinner
+        await spinner.stop()
         console.log('Internal server error')
         console.log('Sorry, please try again or quit')
         break
@@ -53,12 +60,13 @@ const run_chatbot = async () => {
       // get AI's response
       const response = await ain.db.ref(`${chatPath}/${requestTime}/AI`).getValue()
       if (response) {
+        // stop spinner
+        await spinner.stop()
         console.log(response)
         break
       }
 
       requestCount = requestCount + 1
-      await sleep(3000)
     }
   }
 }
