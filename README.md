@@ -39,6 +39,7 @@ node 2-create_account.js
 node 4-upload_prompt.js
 ```
 2. You can check your transaction in this [page](https://testnet-insight.ainetwork.ai/) with transaction hash(tx_hash) value in the response on console.
+3. You have to proceed to the next step after checking the prompt is written on the AINetwork database properly.
 
 ## 5. Execute chatbot
 1. Execute __5-chatbot.js__ file to run AINFT chatbot.
