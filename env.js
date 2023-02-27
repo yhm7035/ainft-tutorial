@@ -21,7 +21,7 @@ export const typewrite = async (str) => {
   for(let i = 0; i < charArray.length; i++) {
     process.stdout.write(charArray[i])
 
-    await sleep(30)
+    await sleep(40)
   }
   process.stdout.write('\r\n')
 }
