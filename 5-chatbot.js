@@ -40,8 +40,8 @@ const run_chatbot = async () => {
     let getResponseNotYet = true
     let requestCount = 1
     while(getResponseNotYet) {
-      // wait 2 seconds to get response
-      await sleep(2000)
+      // wait 3 seconds to get response
+      await sleep(3000)
 
       // maximum number of attempts is 5
       if (requestCount > 5) {
