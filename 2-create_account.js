@@ -6,7 +6,7 @@ import { env } from './env.js'
 
 // create default class of AINetwork and object of the class
 const Ain = ainJs.default
-const ain = new Ain(env.AIN_API_SERVER, 0)
+const ain = new Ain(env.AIN_API_SERVER, 1)
 
 // create account
 const account = ain.wallet.create(1)

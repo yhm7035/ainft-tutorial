@@ -6,9 +6,9 @@ export const spinner = ora({
 })
 
 export const env = {
-  AIN_API_SERVER: 'https://testnet-api.ainetwork.ai',
-  APP_NAME: 'ainft_tutorial_dev',
-  APP_PATH: '/apps/ainft_tutorial_dev'
+  AIN_API_SERVER: 'https://mainnet-api.ainetwork.ai',
+  APP_NAME: 'ainft_a_day',
+  APP_PATH: '/apps/ainft_a_day'
 }
 
 export const sleep = (ms) => {
@@ -21,7 +21,7 @@ export const typewrite = async (str) => {
   for(let i = 0; i < charArray.length; i++) {
     process.stdout.write(charArray[i])
 
-    await sleep(50)
+    await sleep(30)
   }
   process.stdout.write('\r\n')
 }
